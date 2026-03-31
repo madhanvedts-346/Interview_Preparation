@@ -1,0 +1,20 @@
+1. what is node?
+Node in kubernetes is a machine that run your application workload in the form of pod and it manage by kubernetes control plane.
+  -->kubectl get node
+
+2. what is pod?
+Pod is smallest deployment unit in kubernetes that conatins one or more container which share same network and memory
+  -->kubectl get pod
+
+3. what is replicaset?
+Replicaset is kubernetes controller that ensure specified number of indentical are always running.
+if it deleted or crashed it will create the pod automatically.
+we usually don't create the replicaset directly we create the deployment it manage replicaset.
+  -->kubectl get replicaset
+
+4.what is deployment?
+In kubernetes deployment is a controller that manage the lifecycle of pod and replicaset and allowing for easy scaling, rolling update and rollback od application
+
+Type:
+1.rolling update (gradually replaced with new version so it causing zero downtime)
+2.Recreate (remove the old pod then create the new one so it causing downtime)
