@@ -35,3 +35,25 @@ rollbacks, and version control for applications.
 
 8. what is service?
 A Service in Kubernetes exposes a set of Pods using a stable IP address and DNS name, enabling reliable communication between applications.
+Types:
+1.ClusterIP- access within cluster
+2.NodePort- access within node network
+3.LoadBalancer- expose to world
+
+9. difference between docker swarm vs kubernetes?
+Docker Swarm is Docker’s native container orchestration tool that is simple to set up and suitable for small environments, 
+whereas Kubernetes is a powerful and extensible orchestration platform offering advanced scaling, self-healing, and enterprise-grade container management.
+
+10. what are the main component in kubernetes architecture?
+Control Plane: API server, etcd, scheduler, controller manager, Cloud controller manager
+Data Plane: kubelet, container runtime, kube-proxy
+
+11. what is role of kube-proxy?
+kube-proxy runs on every node and manages Service networking by creating iptables or IPVS rules. 
+It routes incoming traffic from a Service IP to backend Pods and provides internal load balancing.
+
+12. what is role of kubelet?
+kubelet runs on every worker node and ensures containers are running as per the desired state defined in Kubernetes. 
+It communicates with the API Server, manages pod lifecycle, interacts with container runtime, performs health checks, and reports node status.
+
+13. Day to Day activities?
