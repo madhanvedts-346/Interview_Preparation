@@ -7,14 +7,27 @@ Pod is smallest deployment unit in kubernetes that conatins one or more containe
   -->kubectl get pod
 
 3. what is replicaset?
-Replicaset is kubernetes controller that ensure specified number of indentical are always running.
+Replicaset is kubernetes controller that ensure specified number of indentical pods are always running.
 if it deleted or crashed it will create the pod automatically.
 we usually don't create the replicaset directly we create the deployment it manage replicaset.
   -->kubectl get replicaset
 
-4.what is deployment?
-In kubernetes deployment is a controller that manage the lifecycle of pod and replicaset and allowing for easy scaling, rolling update and rollback od application
+4. what is deployment?
+In kubernetes deployment is a controller that manage the lifecycle of pod and replicaset and allowing for easy scaling, rolling update and 
+rollback our application.
 
 Type:
 1.rolling update (gradually replaced with new version so it causing zero downtime)
 2.Recreate (remove the old pod then create the new one so it causing downtime)
+
+5. Difference between Container vs Pod vs Deployment?
+Container is where the application actually runs.
+Pod is the smallest deployable unit in Kubernetes that wraps one or more containers.
+Deployment is a higher-level controller that manages pods by providing scaling, self-healing, and rolling updates.
+
+6. Difference between Replicaset and Deployment?
+ReplicaSet is responsible only for maintaining the desired number of Pod replicas, whereas Deployment manages ReplicaSets and provides declarative updates, 
+rollbacks, and version control for applications.
+
+7. what is service?
+A Service in Kubernetes exposes a set of Pods using a stable IP address and DNS name, enabling reliable communication between applications.
