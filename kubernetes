@@ -56,4 +56,31 @@ It routes incoming traffic from a Service IP to backend Pods and provides intern
 kubelet runs on every worker node and ensures containers are running as per the desired state defined in Kubernetes. 
 It communicates with the API Server, manages pod lifecycle, interacts with container runtime, performs health checks, and reports node status.
 
+13. what is statefulset?
+StatefulSet is a Kubernetes controller used to manage stateful applications that require stable pod identities, persistent storage, and ordered deployment. 
+Each pod gets a unique hostname and its own persistent volume. It is commonly used for databases like MySQL, PostgreSQL, MongoDB, and Kafka.
+
+14.what is headless service?
+A Headless Service is a Kubernetes Service with clusterIP: None that does not perform load balancing. It exposes the individual IP addresses of pods through DNS, 
+enabling direct pod-to-pod communication. It is commonly used with StatefulSets such as MySQL, Kafka, and MongoDB.
+
+15.what is probes?
+Probes are Kubernetes health checks used to monitor container status. Liveness probes determine when to restart a container, readiness probes determine 
+when a pod can receive traffic, and startup probes handle slow-starting applications. They help improve application availability and reliability.
+
+16.waht is ingress?
+Ingress is a Kubernetes resource that manages external HTTP/HTTPS access to services inside a cluster. 
+It acts as a Layer 7 (Application Layer) load balancer and provides routing rules based on hostnames and URL paths.
+
+17.what is ingress controller?
+An Ingress Controller is a Kubernetes component that implements the rules defined in an Ingress resource. 
+It continuously watches the Kubernetes API for Ingress objects and configures a load balancer or reverse proxy to route external traffic to the appropriate services.
+
+18.Difference Between Service LoadBalancer and Ingress
+LoadBalancer Service	                                      Ingress
+Exposes one service	                                Exposes multiple services
+Layer 4 (TCP/UDP)	                                  Layer 7 (HTTP/HTTPS)
+Creates separate load balancer	                    Uses a single entry point
+Limited routing	                                    Host and path-based routing
+
 13. Day to Day activities?
